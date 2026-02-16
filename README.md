@@ -1,13 +1,13 @@
-# Pricing-Strategy-Under-Demand-Capital-Constraints
+**Pricing Strategy Under Demand & Capital Constraints**
 
-**A Revenue & Risk Simulation Framework**
+A Revenue, Forecast & Risk-Aware Pricing Intelligence Framework
 
 ⚠️ This project is a simulation-based strategic pricing framework created for demonstration purposes.
 It does not represent real company data.
 
-**📌 Project Overview**
+📌 Project Overview
 
-This project demonstrates how pricing decisions can be translated into a structured, risk-aware revenue strategy rather than isolated elasticity estimates.
+This repository presents a modular pricing intelligence pipeline designed to transform raw demand data into structured, risk-aware pricing decisions.
 
 Instead of asking:
 
@@ -17,37 +17,42 @@ This framework asks:
 
 Where can we increase prices safely?
 
-What is the revenue impact under different scenarios?
+What is the expected revenue impact?
 
-How does price sensitivity translate into operational risk?
+What is the forecast-adjusted downside risk?
 
-How should inventory and portfolio strategy adapt?
+How should pricing strategy adapt across regions and categories?
 
-The project integrates elasticity modeling, scenario simulation, and operational risk mapping into a unified decision framework.
+How do we translate elasticity into operational guidance?
 
-**🎯 Business Problem**
+This is not just an elasticity notebook.
+It is a structured pricing decision system.
 
-Organizations frequently increase prices to protect margins. However:
+🎯 Business Context
+
+Organizations often increase prices to protect margins. However:
 
 Demand may contract
 
-Revenue may decrease
+Revenue may decline
 
-Operational risk may increase
+Forecast uncertainty may amplify risk
 
-Inventory planning may become inefficient
+Inventory planning may destabilize
 
-Promotional effectiveness may shift
+Promotional leverage may shift
 
-This project builds a structured approach to answer:
+This project builds a systematic approach to answer:
 
-Which regions/categories are safe for price increases?
+Which regions/categories are safe for margin expansion?
 
-What is the optimal balance between volume protection and margin expansion?
+Where is volume protection critical?
 
-How should pricing strategy differ across portfolios?
+What is the optimal balance between revenue growth and risk exposure?
 
-**🧠 Methodology**
+How should pricing differ across portfolio segments?
+
+🧠 Methodology
 
 1️⃣ Data Preparation
 
@@ -55,191 +60,320 @@ Category-level demand aggregation
 
 Regional segmentation (US, EU, APAC, TR)
 
-Promotion-adjusted volume normalization
+Promotion-adjusted normalization
 
-Revenue calculation baseline
+Baseline revenue construction
 
-2️⃣ Elasticity Estimation
 
-Price elasticity of demand estimated using a log-log regression model:
+2️⃣ Demand Forecasting
 
-%ΔQ=β×%ΔP
+
+Forecast baseline demand under stable price assumptions.
+
+Purpose:
+
+Establish expected volume trajectory
+
+Provide baseline for simulation
+
+Enable forecast-adjusted risk analysis
+
+
+3️⃣ Elasticity Estimation
+
+
+Log-log regression model:
+
+%ΔQ = β × %ΔP
 
 Where:
 
 β = price elasticity coefficient
 
-R² used to evaluate model explanatory strength
+R² = explanatory strength
 
-Elasticity classification:
+Elasticity Classification:
 
 |β| < 0.3 → Low sensitivity
 
-0.3–0.7 → Moderate sensitivity
+0.3 – 0.7 → Moderate sensitivity
 
 0.7 → High sensitivity
 
-3️⃣ Scenario Simulation
 
-Three pricing strategies were simulated:
+4️⃣ Pricing Scenario Simulation
+
+
+Three structured strategies:
 
 🔴 Aggressive
 
-High price increases
+Higher price increases
 
 Margin expansion focus
 
-Higher volume risk
+Elevated volume risk
 
 🟡 Balanced
 
-Moderate price increases
+Moderate increases
 
-Revenue optimization focus
+Revenue optimization
+
+Controlled risk
 
 🟢 Conservative
 
-Minimal price increases
+Minimal increase
 
-Volume protection focus
+Volume preservation
+
+Operational stability
 
 For each scenario:
 
-New price computed
+Adjust price
 
-Demand adjusted using elasticity
+Apply elasticity-driven demand shift
 
-Revenue recalculated
+Recalculate revenue
 
-Volume loss estimated
+Estimate volume loss
 
-4️⃣ Revenue Engine
+Quantify risk exposure
 
-Revenue formula:
-Revenue=Adjusted Price×Adjusted Quantity
 
-Volume adjustment:
-New Quantity=Base Quantity×(1+Elasticity×Price Change%)
+5️⃣ Revenue Engine
 
-This allows simulation of revenue impact before real-world execution.
 
-5️⃣ Operational Risk Translation Layer
+Revenue Formula:
 
-Elasticity scores were translated into operational implications:
+Revenue = Adjusted Price × Adjusted Quantity
 
-Elasticity Level	Risk Implication
-Low	Safe margin expansion
-Moderate	Monitor closely
+Quantity Adjustment:
+
+New Quantity = Base Quantity × (1 + Elasticity × Price Change%)
+
+This allows pre-execution revenue simulation.
+
+
+6️⃣ Forecast Risk Layer
+
+
+Forecast uncertainty is incorporated to detect:
+
+Downside revenue exposure
+
+High volatility segments
+
+Elasticity × Forecast interaction risk
+
+This step ensures pricing decisions are not made in isolation from demand uncertainty.
+
+
+7️⃣ Operational Risk Translation
+
+
+Elasticity + Forecast Risk → Strategic Signal
+
+Elasticity Level	Operational Signal
+Low	Margin expansion zone
+Moderate	Monitor & optimize
 High	Volume protection required
 
-This step transforms statistical output into business decision language.
+This converts statistical output into executive language.
 
-6️⃣ Portfolio Resilience Mapping
 
-Cross-analysis performed on:
+8️⃣ Decision Layer
 
-Region × Category
 
-Elasticity × Revenue share
+The final layer integrates:
 
-Promotion responsiveness
+Revenue delta
 
-This identifies:
+Volume contraction
 
-Margin expansion zones
+Elasticity sensitivity
 
-High-risk contraction areas
+Forecast risk
 
-Campaign-sensitive markets
+Portfolio exposure
 
-**🏗 Model Architecture**
+Outputs:
 
+Recommended pricing strategy
+
+Risk classification
+
+Region-category prioritization
+
+This is the strategic recommendation engine.
+
+🏗 Model Architecture
 Raw Data
 
    ↓
    
-Elasticity Model (Log-Log Regression)
+Demand Forecasting
 
    ↓
    
-Scenario Simulator (Aggressive / Balanced / Conservative)
-
+Elasticity Modeling
+   
+   ↓
+   
+Pricing Simulation
+   
    ↓
    
 Revenue Engine
-
+   
    ↓
    
-Operational Risk Mapping
-
+Forecast Risk Analysis
+   
    ↓
    
-Strategic Recommendation Layer
+Decision Layer
+   
+   ↓
+   
+Strategic Output
 
 
-The framework separates statistical modeling from strategic interpretation.
 
-**📈 Key Findings (Simulation Insights)**
+The architecture separates modeling from decision translation.
 
-APAC Electronics shows high margin expansion potential.
+📂 Repository Structure
 
-US Fashion is highly elastic  aggressive pricing destroys revenue.
+pricing-strategy-framework/
 
-EU region shows strong promotional multiplier effect.
+│
 
-Turkey requires volume-protection strategy due to sensitivity.
+├── notebooks/
+
+│└── exploratory_analysis.ipynb
+
+│
+
+├── src/
+
+│   ├── main.py
+
+│   ├── demand_forecasting.py
+
+│   ├── forecast_risk_analysis.py
+
+│   ├── pricing_simulation.py
+
+│   ├── pricing_intelligence.py
+
+│   ├── decision_layer.py
+
+│   └── database_connector.py
+
+│
+
+├── data/
+
+├── outputs/
+
+└── README.md
+
+▶ Example Execution
+python main.py
+
+
+Pipeline Flow:
+
+Load data
+
+Forecast baseline demand
+
+Estimate elasticity
+
+Simulate pricing scenarios
+
+Compute revenue impact
+
+Evaluate forecast-adjusted risk
+
+Generate strategic recommendation
+
+
+📈 Key Insights (Simulation Results)
+
+
+APAC Electronics shows strong margin expansion potential.
+
+US Fashion demonstrates high elasticity — aggressive pricing reduces revenue.
+
+EU exhibits strong promotional responsiveness.
+
+Turkey requires volume-protection strategy.
 
 Revenue does not always increase with price hikes.
 
-Balanced strategy maximizes revenue under most tested conditions.
+Balanced strategy maximizes stability-adjusted revenue.
 
-**⚖️ Scenario Comparison Summary**
-Strategy	Revenue Impact	Volume Risk	Operational Stability
+
+
+⚖ Scenario Comparison
+Strategy	Revenue Impact	Volume Risk	Stability
 Aggressive	High variance	High	Low
 Balanced	Optimized	Moderate	High
 Conservative	Stable	Low	Very High
 
-Balanced strategy selected as optimal under simulation.
+Balanced selected as optimal under simulation constraints.
 
-**📊 Strategic Insights**
 
-Price increases must be elasticity-aware.
+📊 Strategic Principles Derived
 
-Regional pricing strategy should not be uniform.
 
-Promotion-heavy regions behave differently from margin-driven markets.
+Pricing must be elasticity-aware.
 
-Elasticity must be translated into operational planning.
+Uniform global price strategy is inefficient.
 
-Portfolio-level decisions outperform isolated category decisions.
+Forecast risk must inform pricing intensity.
 
-**⚠️ Limitations**
+Portfolio-level optimization outperforms isolated adjustments.
 
-Some categories show low R² (weak explanatory power)
+Analytics must translate into decision logic.
+
+
+⚠ Limitations
+
 
 Linear elasticity assumption
 
-No cross-elasticity (substitution effects) modeled
+No cross-elasticity modeling
 
-No macroeconomic variables included
+Simplified forecasting model
 
-Simulation-based (not real-world implementation)
+No macroeconomic drivers
 
-**🚀 Future Improvements**
+Simulation-based validation
 
-Bayesian elasticity modeling
+
+
+🚀 Future Enhancements
+
+
+Bayesian elasticity estimation
 
 Cross-category substitution modeling
 
-Dynamic pricing engine
+Dynamic pricing automation
 
-Time-series demand modeling
+Reinforcement learning pricing agent
 
-Real-time BI dashboard integration
+Real-time dashboard deployment
 
 Inventory optimization integration
 
-**🧰 Tech Stack**
+
+🧰 Tech Stack
+
 
 Python
 
@@ -249,17 +383,20 @@ NumPy
 
 Scikit-learn
 
-Matplotlib / Seaborn
+Statsmodels
+
+Matplotlib
 
 Jupyter Notebook
 
-SQL
 
-**👩‍💻 Author**
+👩‍💻 Author
 
-Developed as a strategic pricing and revenue optimization case study.
-Focused on bridging analytics and executive decision-making.
+
+Developed as a strategic pricing and revenue intelligence case study.
 
 **Designed and Developed by Melek İkiz**
 
 **Focused on Pricing Strategy, Revenue Optimization & Decision Analytics**
+
+Bridging analytics and strategic decision-making.
