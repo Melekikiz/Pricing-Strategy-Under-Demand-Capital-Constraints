@@ -16,6 +16,7 @@ python src/main.py
 
 
 
+
 This repository presents a modular pricing intelligence pipeline designed to transform raw demand data into structured, risk-aware pricing decisions.
 
 Instead of asking:
