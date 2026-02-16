@@ -411,6 +411,8 @@ Developed as a strategic pricing and revenue intelligence case study.
 
 Bridging analytics and strategic decision-making.
 
+
+
 ## 📄 Detailed Analysis (PDF)
 
 
