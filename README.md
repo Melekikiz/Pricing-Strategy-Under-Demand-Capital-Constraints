@@ -409,3 +409,12 @@ Developed as a strategic pricing and revenue intelligence case study.
 **Focused on Pricing Strategy, Revenue Optimization & Decision Analytics**
 
 Bridging analytics and strategic decision-making.
+
+## 📄 Detailed Analysis (PDF)
+
+
+For full analytical breakdown, charts, and categorization results, see:
+
+🔗 [Prising Strategy.pdf]([Prising Strategy.pdf](https://github.com/user-attachments/files/25335576/Prising.Strategy.pdf)
+)
+
