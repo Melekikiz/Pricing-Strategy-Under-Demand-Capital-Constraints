@@ -7,6 +7,15 @@ It does not represent real company data.
 
 📌 Project Overview
 
+## 🚀 Quick Start
+
+To run the full pricing pipeline:
+
+```bash
+python src/main.py
+
+
+
 This repository presents a modular pricing intelligence pipeline designed to transform raw demand data into structured, risk-aware pricing decisions.
 
 Instead of asking:
